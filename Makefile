@@ -28,3 +28,6 @@ install:
 uninstall:
 	rm -rf $(INSTALL_PATH)/mongrel2.lua
 	rm -rf $(INSTALL_PATH)/mongrel2
+
+test:
+	tsc tests/*.lua

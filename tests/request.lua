@@ -1,13 +1,15 @@
+package.path = string.format("?.lua;%s", package.path)
+
 local request = require 'mongrel2.request'
 
 local payloads = {}
 
-for line in io.lines('request_payloads.txt') do
+for line in io.lines('tests/request_payloads.txt') do
     table.insert(payloads, line)
 end
 
 context('m2-lua', function()
-    
+
     context('request', function()
         context('parser sanity', function()
             for _, msg in pairs(payloads) do
