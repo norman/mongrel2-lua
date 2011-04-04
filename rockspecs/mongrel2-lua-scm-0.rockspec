@@ -19,11 +19,11 @@ build = {
   type = "none",
   install = {
     lua = {
-      ["mongrel2.lua"]        = "init.lua",
-      ["mongrel2.connection"] = "connection.lua",
-      ["mongrel2.request"]    = "request.lua",
-      ["mongrel2.util"]       = "util.lua",
-      ["mongrel2.config"]     = "config.lua"
+      ["mongrel2.lua"]        = "mongrel2.lua",
+      ["mongrel2.connection"] = "mongrel2/connection.lua",
+      ["mongrel2.request"]    = "mongrel2/request.lua",
+      ["mongrel2.util"]       = "mongrel2/util.lua",
+      ["mongrel2.config"]     = "mongrel2/config.lua"
     }
   }
 }
