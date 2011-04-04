@@ -4,15 +4,10 @@ local request = require 'mongrel2.request'
 
 local payloads = {}
 
-for line in io.lines('tests/request_payloads.txt') do
-    table.insert(payloads, line)
-end
-
 context('m2-lua', function()
-
     context('request', function()
         context('parser sanity', function()
-            for _, msg in pairs(payloads) do
+            for msg in io.lines('tests/request_payloads.txt') do
                  test(msg, function()
                      local req, err = request.parse(msg)
                      assert_nil(err)
@@ -20,7 +15,5 @@ context('m2-lua', function()
                  end)
             end
         end)
-
     end)
-
 end)
